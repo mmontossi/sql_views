@@ -5,9 +5,6 @@ class TasksTest < ActiveSupport::TestCase
   setup do
     load File.expand_path('../../lib/tasks/sql_views.rake', __FILE__)
     Rake::Task.define_task :environment
-  end
-
-  teardown do
     FileUtils.rm_rf Rails.root.join('tmp/digests/db/views')
   end
 

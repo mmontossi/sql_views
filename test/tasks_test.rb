@@ -14,8 +14,7 @@ class TasksTest < ActiveSupport::TestCase
 
     Rake::Task['db:views:update'].invoke
 
-    result = connection.execute('SELECT COUNT(*) FROM guitars')
-    assert_equal 1, result.to_a.first['count'].to_i
+    assert_equal 1, connection.execute('SELECT * FROM guitars').to_a.size
 
     connection.expects(:execute).never
     Rake::Task['db:views:update'].invoke

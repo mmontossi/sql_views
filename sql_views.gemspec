@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', ['>= 4.2.0', '< 4.3.0']
 
   s.add_development_dependency 'pg', '~> 0.18'
+  s.add_development_dependency 'mocha', '~> 1.1'
 end

@@ -18,7 +18,7 @@ module SqlViews
     private
 
     def connection
-      @connection ||= ActiveRecord::Base.connection
+      ActiveRecord::Base.connection
     end
 
     def changed?(path)

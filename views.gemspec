@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Mathías Montossi']
   s.email       = ['mmontossi@buyin.io']
   s.homepage    = 'https://github.com/mmontossi/views'
-  s.summary     = 'Views for rails.'
-  s.description = 'Adds support for sql views in rails.'
+  s.summary     = 'Database views for rails.'
+  s.description = 'Simple way to manage database views in rails.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']

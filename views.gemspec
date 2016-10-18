@@ -1,16 +1,16 @@
 $:.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'sql_views/version'
+require 'views/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'sql_views'
-  s.version     = SqlViews::VERSION
+  s.name        = 'views'
+  s.version     = Views::VERSION
   s.authors     = ['Mathías Montossi']
   s.email       = ['mmontossi@buyin.io']
-  s.homepage    = 'https://github.com/mmontossi/sql_views'
-  s.summary     = 'Sql views for rails.'
+  s.homepage    = 'https://github.com/mmontossi/views'
+  s.summary     = 'Views for rails.'
   s.description = 'Adds support for sql views in rails.'
   s.license     = 'MIT'
 

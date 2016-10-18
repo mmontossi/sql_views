@@ -3,8 +3,8 @@ default: &default
 
 development:
   <<: *default
-  database: sql_views_development
+  database: views_development
 
 test:
   <<: *default
-  database: sql_views_test
+  database: views_test

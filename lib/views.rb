@@ -1,4 +1,4 @@
-module SqlViews
+module Views
   class << self
 
     def update

@@ -1,7 +1,7 @@
 module Views
   class << self
 
-    def update
+    def sync
       pattern = Rails.root.join('db/views/*.sql')
       Dir.glob(pattern) do |path|
         path = Pathname.new(path)

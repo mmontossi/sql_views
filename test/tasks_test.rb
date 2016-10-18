@@ -8,15 +8,15 @@ class TasksTest < ActiveSupport::TestCase
     FileUtils.rm_rf Rails.root.join('tmp/digests/db/views')
   end
 
-  test 'update' do
+  test 'sync' do
     Product.create(name: 'Les Paul', category: 'Guitar')
     Product.create(name: 'Laney', category: 'Amps')
 
-    Rake::Task['db:views:update'].invoke
+    Rake::Task['db:views:sync'].invoke
     assert_equal 1, connection.execute('SELECT * FROM guitars').to_a.size
 
     connection.expects(:execute).never
-    Rake::Task['db:views:update'].invoke
+    Rake::Task['db:views:sync'].invoke
   end
 
   private

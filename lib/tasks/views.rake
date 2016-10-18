@@ -1,7 +1,7 @@
 namespace :db do
   namespace :views do
-    task update: :environment do
-      Views.update
+    task sync: :environment do
+      Views.sync
     end
   end
 end

@@ -36,7 +36,7 @@ WHERE
 
 Sync the views using the following rake task:
 ```
-bundle exec rake db:views:update
+bundle exec rake db:views:sync
 ```
 
 ## Credits

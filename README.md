@@ -7,6 +7,10 @@
 
 Simple way to manage database views in rails.
 
+## Why
+
+There are some other gems solving the same problem, but we want a more direct, simpler and less invasive approach.
+
 ## Install
 
 Put this line in your Gemfile:

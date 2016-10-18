@@ -12,8 +12,8 @@ class GeneratorsTest < Rails::Generators::TestCase
   end
 
   test 'file generation' do
-    run_generator %w(user)
-    assert_file 'app/cachers/user_cacher.rb'
+    run_generator %w(guitars)
+    assert_file 'db/views/guitars.sql'
   end
 
 end

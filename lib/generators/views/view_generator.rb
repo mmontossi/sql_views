@@ -7,7 +7,7 @@ module Views
       source_root File.expand_path('../templates', __FILE__)
 
       def create_fixture_file
-        template 'view.sql', Rails.root.join("db/views/#{table_name}.sql")
+        template 'view.sql', "db/views/#{table_name}.sql"
       end
 
     end

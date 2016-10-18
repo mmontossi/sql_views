@@ -19,52 +19,24 @@ Then bundle:
 $ bundle
 ```
 
-## Configuration
-
-
-
-In your config/routes.rb use the localized method to decide wich routes will be localized:
-```ruby
-localized strategy: :param, locales: %i(es en) do
-  get 'page' => 'pages#show', as: :param
-end
-
-localized strategy: :subdomain, locales: { 'uy' => :es, 'us' => :en } do
-  get 'page' => 'pages#show', as: :subdomain
-end
-
-localized strategy: :domain, locales: { 'domain.uy' => :es, 'domain.us' => :en } do
-  get 'page' => 'pages#show', as: :domain
-end
-```
-
-Put your localizations inside the routes key in your locales yamls:
-```yaml
-es:
-  routes:
-    page: "pagina"
-```
-
-NOTE: There is no need to put the full path, just localize each part individually.
-
 ## Usage
 
-Helpers will continue working the same:
-```ruby
-param_path # Will output /en/pagina in case I18n.locale is :es for param strategy
-
-subdomain_url # Will output http://uy.domain.com/pagina if current subdomain is uy
-
-domain_url # Will output http://domain.uy/pagina if current domain is domain.uy
+Generate a view:
+```
+rails g view guitars
 ```
 
-And you can change the locale by passing the corresponding parameter:
-```ruby
-param_path locale: :en # Will output /en/page
+Edit the generated sql file inside db/views:
+```sql
+SELECT
+  products.*
+WHERE
+  products.category = 'Guitar'
+```
 
-subdomain_url sudomain: 'us' # Will output http://us.domain.com/page
-
-domain_url domain: 'domain.us' # Will output http://domain.us/page
+Sync the views using the following rake task:
+```
+bundle exec rake db:views:update
 ```
 
 ## Credits

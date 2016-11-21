@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TasksTest < ActiveSupport::TestCase
+class TaskTest < ActiveSupport::TestCase
 
   setup do
     load File.expand_path('../../lib/tasks/views.rake', __FILE__)

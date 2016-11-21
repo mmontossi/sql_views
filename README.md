@@ -26,7 +26,7 @@ Then bundle:
 $ bundle
 ```
 
-## Usage
+## Configuration
 
 Generate a view:
 ```
@@ -40,6 +40,8 @@ SELECT
 WHERE
   products.category = 'Guitar'
 ```
+
+## Usage
 
 Sync the views using the following rake task:
 ```

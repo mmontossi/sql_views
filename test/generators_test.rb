@@ -3,8 +3,6 @@ require 'rails/generators'
 require 'generators/views/view_generator'
 
 class GeneratorsTest < Rails::Generators::TestCase
-
-  tests Views::Generators::ViewGenerator
   destination Rails.root.join('tmp')
 
   teardown do
@@ -12,6 +10,7 @@ class GeneratorsTest < Rails::Generators::TestCase
   end
 
   test 'file generation' do
+    self.class.tests Views::Generators::ViewGenerator
     run_generator %w(guitars)
     assert_file 'db/views/guitars.sql'
   end

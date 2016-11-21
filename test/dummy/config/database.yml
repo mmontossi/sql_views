@@ -1,10 +1,7 @@
-default: &default
-  adapter: postgresql
-
 development:
-  <<: *default
+  adapter: postgresql
   database: views_development
 
 test:
-  <<: *default
+  adapter: postgresql
   database: views_test

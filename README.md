@@ -9,7 +9,10 @@ Simple way to manage database views in rails.
 
 ## Why
 
-There are some other gems solving the same problem, but we want a more direct, simpler and less invasive approach.
+I did this gem to:
+
+- Avoid the need migrations and versioning.
+- Sync if sql file changes with a rake task.
 
 ## Install
 
@@ -27,7 +30,7 @@ $ bundle
 
 Generate a view:
 ```
-rails g view guitars
+$ bundle exec rails g view guitars
 ```
 
 Edit the generated sql file inside db/views:
@@ -40,12 +43,8 @@ WHERE
 
 Sync the views using the following rake task:
 ```
-bundle exec rake db:views:sync
+$ bundle exec rake db:views:sync
 ```
-
-## Contributing
-
-Because we've limited resources we'll mainly add features and keep a compatibility range close to what we need in our projects. However, contributions are more than welcome if someone wants to make any improvement.
 
 ## Credits
 

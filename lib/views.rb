@@ -1,3 +1,7 @@
+require 'generators/view_generator'
+require 'views/railtie'
+require 'views/version'
+
 module Views
   class << self
 

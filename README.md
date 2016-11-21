@@ -11,8 +11,8 @@ Simple way to manage database views in rails.
 
 I did this gem to:
 
-- Avoid the need migrations and versioning.
-- Sync if sql file changes with a rake task.
+- Avoid the need of migrations and versioning.
+- Update the views if the sql file changes with a task.
 
 ## Install
 

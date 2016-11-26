@@ -11,8 +11,9 @@ Simple way to manage database views in rails.
 
 I did this gem to:
 
-- Avoid the need of migrations and versioning.
-- Sync the views if any sql file changed with a task.
+- Keep views definitions into separate sql files without versioning.
+- Register views into schema.
+- Control views from migration.
 
 ## Install
 
@@ -33,7 +34,7 @@ Generate a view:
 $ bundle exec rails g view guitars
 ```
 
-Edit the generated sql file inside db/views:
+Edit the generated sql file db/views/guitars.sql:
 ```sql
 SELECT
   products.*
@@ -41,11 +42,29 @@ WHERE
   products.category = 'Guitar'
 ```
 
+Run the migration to register the view:
+```
+$ bundle exec rake db:migrate
+```
+
 ## Usage
 
-Sync the views using the following rake task:
+If you need to make a change, update the sql and then:
+```ruby
+class ChangeGuitarsView < ActiveRecord::Migration
+  def change
+    change_view :guitars
+  end
+end
 ```
-$ bundle exec rake db:views:sync
+
+If you want to drop it:
+```ruby
+class DropGuitarsView < ActiveRecord::Migration
+  def change
+    drop_view :guitars
+  end
+end
 ```
 
 ## Credits

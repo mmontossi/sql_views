@@ -3,26 +3,23 @@ require 'test_helper'
 class TaskTest < ActiveSupport::TestCase
 
   setup do
-    load File.expand_path('../../lib/tasks/views.rake', __FILE__)
-    Rake::Task.define_task :environment
-    FileUtils.rm_rf Rails.root.join('tmp/digests/db/views')
+    Dummy::Application.load_tasks
   end
 
-  test 'sync' do
-    Product.create(name: 'Les Paul', category: 'Guitar')
-    Product.create(name: 'Laney', category: 'Amps')
-
-    Rake::Task['db:views:sync'].invoke
-    assert_equal 1, connection.execute('SELECT * FROM guitars').to_a.size
-
-    connection.expects(:execute).never
-    Rake::Task['db:views:sync'].invoke
+  test 'load' do
+    silence_stream(STDOUT) do
+      Rake::Task['db:reset'].invoke
+    end
+    assert_equal 'guitars', ActiveRecord::Base.connection.views.first['name']
   end
 
-  private
-
-  def connection
-    ActiveRecord::Base.connection
+  test 'dump' do
+    path = Rails.root.join('db/schema.rb')
+    FileUtils.rm_rf path
+    silence_stream(STDOUT) do
+      Rake::Task['db:schema:dump'].invoke
+    end
+    assert_includes File.read(path), 'create_view "guitars", force: true'
   end
 
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'rails/generators'
-require 'generators/views/view_generator'
+require 'generators/view_generator'
 
 class GeneratorTest < Rails::Generators::TestCase
   destination Rails.root.join('tmp')
@@ -13,6 +13,7 @@ class GeneratorTest < Rails::Generators::TestCase
     self.class.tests Views::Generators::ViewGenerator
     run_generator %w(guitars)
     assert_file 'db/views/guitars.sql'
+    assert_migration 'db/migrate/create_guitars_view.rb'
   end
 
 end

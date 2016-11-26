@@ -13,7 +13,7 @@ I did this gem to:
 
 - Keep views definitions into separate sql files without versioning.
 - Register views into schema.
-- Control views from migration.
+- Control views from migrations.
 
 ## Install
 
@@ -27,9 +27,9 @@ Then bundle:
 $ bundle
 ```
 
-## Configuration
+## Usage
 
-Generate a view:
+To generate a view:
 ```
 $ bundle exec rails g view guitars
 ```
@@ -42,14 +42,12 @@ WHERE
   products.category = 'Guitar'
 ```
 
-Run the migration to register the view:
+Run the migration:
 ```
 $ bundle exec rake db:migrate
 ```
 
-## Usage
-
-If you need to make a change, update the sql and then:
+If you need to make a change, update the sql and run a migration with:
 ```ruby
 class ChangeGuitarsView < ActiveRecord::Migration
   def change
@@ -58,7 +56,7 @@ class ChangeGuitarsView < ActiveRecord::Migration
 end
 ```
 
-If you want to drop it:
+If you want to drop it, run a migration with:
 ```ruby
 class DropGuitarsView < ActiveRecord::Migration
   def change

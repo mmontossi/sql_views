@@ -56,7 +56,7 @@ class ChangeGuitarsView < ActiveRecord::Migration
 end
 ```
 
-If you want to drop it, run a migration with:
+If you want to drop it:
 ```ruby
 class DropGuitarsView < ActiveRecord::Migration
   def change

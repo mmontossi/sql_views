@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = 'views'
   s.version     = Views::VERSION
   s.authors     = ['Mathías Montossi']
-  s.email       = ['mmontossi@buyin.io']
+  s.email       = ['mmontossi@gmail.com']
   s.homepage    = 'https://github.com/mmontossi/views'
   s.summary     = 'Database views for rails.'
   s.description = 'Simple way to manage database views in rails.'

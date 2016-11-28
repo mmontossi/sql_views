@@ -29,6 +29,8 @@ $ bundle
 
 ## Usage
 
+### Definitions
+
 To generate a view:
 ```
 $ bundle exec rails g view guitars
@@ -46,6 +48,8 @@ Run the migration:
 ```
 $ bundle exec rake db:migrate
 ```
+
+### Modifications
 
 If you need to make a change, update the sql and run a migration with:
 ```ruby

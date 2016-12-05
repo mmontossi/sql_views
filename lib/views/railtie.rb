@@ -1,7 +1,7 @@
 module Views
   class Railtie < Rails::Railtie
 
-    initializer :views do
+    initializer 'views.extensions' do
       ::ActiveRecord::Migration::CommandRecorder.include(
         Views::Extensions::ActiveRecord::CommandRecorder
       )

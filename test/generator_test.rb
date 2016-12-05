@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'rails/generators'
-require 'generators/view_generator'
+require 'generators/view/view_generator'
 
 class GeneratorTest < Rails::Generators::TestCase
   destination Rails.root.join('tmp')

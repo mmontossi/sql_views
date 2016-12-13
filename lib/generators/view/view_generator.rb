@@ -2,7 +2,7 @@ require 'rails/generators'
 
 module Views
   module Generators
-    class ViewGenerator < ::Rails::Generators::NamedBase
+    class ViewGenerator < Rails::Generators::NamedBase
       include Rails::Generators::Migration
 
       source_root File.expand_path('../templates', __FILE__)
